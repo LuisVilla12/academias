@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\InscripcionsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AppController;
 use App\Http\Controllers\LikeController;
@@ -8,12 +7,14 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ImagenController;
 use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\EventosController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ComentarioController;
-use App\Http\Controllers\EventosController;
+use App\Http\Controllers\InscripcionsController;
 use App\Http\Controllers\ParticipanteController;
 use App\Http\Controllers\PDF\InvitationController;
 use App\Http\Controllers\PDF\ListAssistantsController;
+use App\Http\Controllers\Export\ListAssistantsExcelController;
 
 // Index
 Route::get('/', [AppController::class,'index'])->name('index');
@@ -75,6 +76,9 @@ Route::get('/invitation/preview/pdf',[ InvitationController::class,'previewInvit
 Route::get('/invitation/send/pdf',[ InvitationController::class,'sendInvitation'])->name('invitation.send.pdf');
 
 Route::get('/list/assistants/preview/pdf',[ ListAssistantsController::class,'previewListAssistants'])->name('list.assistants.preview.pdf');
+
+// Excel
+Route::get('/export/list/assistants', [ListAssistantsExcelController::class, 'ListExportExcel']);
 
 // Participante
 Route::get('/participantes', [ParticipanteController::class,'index'])->name('participantes.index');
