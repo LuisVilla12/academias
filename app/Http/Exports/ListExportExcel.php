@@ -2,6 +2,7 @@
 
 namespace App\Http\Exports;
 
+use App\Models\Participante;
 use App\Models\User;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithHeadings;
@@ -18,7 +19,7 @@ class ListExportExcel implements FromCollection, WithHeadings, WithEvents
      */
     public function collection()
     {
-        $list = User::select('name', 'lastnameP', 'lastnameM', 'email')->get();
+        $list = Participante::select('instituto' , 'name_academico', 'grade_academico','area','lastname_m','email_institucional', 'email_personal','number')->get();
         return $list;
     }
 
@@ -26,10 +27,11 @@ class ListExportExcel implements FromCollection, WithHeadings, WithEvents
     {
         // Encabezados que coinciden directamente con los campos seleccionados en la consulta
         return [
-            'Nombre',
-            'Apellido Paterno',
-            'Apellido Materno',
-            'correo',
+            'Instituto',
+            'Nombre y clave del cuerpo academico',
+            'Grado academico',
+            'Area',
+            '',
             'prueba',
         ];
     }
