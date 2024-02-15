@@ -78,7 +78,7 @@ Route::get('/invitation/send/pdf',[ InvitationController::class,'sendInvitation'
 Route::get('/list/assistants/preview/pdf',[ ListAssistantsController::class,'previewListAssistants'])->name('list.assistants.preview.pdf');
 
 // Excel
-Route::get('/export/list/assistants', [ListAssistantsExcelController::class, 'ListExportExcel']);
+Route::get('/export/list/assistants', [ListAssistantsExcelController::class, 'ListExportExcel'])->name('excel');
 
 // Participante
 Route::get('/participantes', [ParticipanteController::class,'index'])->name('participantes.index');

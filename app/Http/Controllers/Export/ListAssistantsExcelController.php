@@ -15,7 +15,7 @@ class ListAssistantsExcelController extends Controller
     public function ListExportExcel()
     {
 
-        return Excel::download(new ListExportExcel, 'Lista De Asistencia.xlsx');
+        return Excel::download(new ListExportExcel, 'Lista.xlsx');
 
     }
 }

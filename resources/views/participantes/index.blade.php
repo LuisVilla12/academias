@@ -7,6 +7,7 @@
         <div class="flex justify-end my-5">
             <a href="{{ route('participante.create') }}" class="font-bold bg-green-500 border-none text-white py-4 px-8 mx-auto block shadow-sm rounded-md text-2xl hover:cursor-pointer">Registar</a>
             <a href="{{ route('list.assistants.preview.pdf') }}" class="font-bold bg-blue-500 border-none text-white py-4 px-8 mx-auto block shadow-sm rounded-md text-2xl hover:cursor-pointer " target="_blank">Ver lista</a>
+            <a href="{{ route('excel') }}" class="font-bold bg-blue-500 border-none text-white py-4 px-8 mx-auto block shadow-sm rounded-md text-2xl hover:cursor-pointer " target="_blank">Generar excel</a>
         </div>
         <div class="mt-5 sm:mt-0">   
             <table class="w-full">

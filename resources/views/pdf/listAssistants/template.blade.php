@@ -31,9 +31,9 @@
         <thead>
         <tr style="background-color: #4299e1; color: #fff; border: 1px solid #2b6cb0;">
             <th style="padding: 0.5rem; border: 1px solid #2b6cb0;">N°</th>
-            {{-- <th style="padding: 0.5rem; border: 1px solid #2b6cb0;">Miembros del cuerpo academico</th> --}}
             <th style="padding: 0.5rem; border: 1px solid #2b6cb0;">Instituto</th>
             <th style="padding: 0.5rem; border: 1px solid #2b6cb0;">CLAVE y Nombre de CA</th>
+            <th style="padding: 0.5rem; border: 1px solid #2b6cb0;">Miembros del cuerpo academico</th> 
             {{-- <th style="width: 150px; padding: 0.5rem; border: 1px solid #2b6cb0;">Firma </th> --}}
         </tr>
         </thead>
@@ -42,9 +42,9 @@
         @foreach ($participiants as $participiant)
         <tr style="border: 1px solid #2b6cb0;">
             <td style="text-align: center; padding: 0.5rem; border: 1px solid #2b6cb0;">{{ $contador++ }}</td>
-            {{-- <td style="text-align: justify; padding: 0.5rem; border: 1px solid #2b6cb0;">{{ $participiant->name . ", " . $participiant->lastname_m }}</td> --}}
             <td style="text-align: center; padding: 0.5rem; border: 1px solid #2b6cb0;">{{ $participiant->instituto }}</td>
             <td style="text-align: justify; padding: 0.5rem; border: 1px solid #2b6cb0;">{{ $participiant->name_academico }}</td>
+            <td style="text-align: justify; padding: 0.5rem; border: 1px solid #2b6cb0;">{{ $participiant->lastname_m }}</td>
             {{-- <td style="text-align: center; padding: 0.5rem; border: 1px solid #2b6cb0;"> {{ $participiant->lastname_p. "           " }}  </td> --}}
         </tr>
         @endforeach
