@@ -5,6 +5,7 @@ use App\Http\Controllers\AppController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ParticipantesSC;
 use App\Http\Controllers\ImagenController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\EventosController;
@@ -14,6 +15,7 @@ use App\Http\Controllers\InscripcionsController;
 use App\Http\Controllers\ParticipanteController;
 use App\Http\Controllers\PDF\InvitationController;
 use App\Http\Controllers\PDF\ListAssistantsController;
+use App\Http\Controllers\PDF\ListaDeAsistentesSCController;
 use App\Http\Controllers\Export\ListAssistantsExcelController;
 
 // Index
@@ -74,7 +76,6 @@ Route::get('/catalogo', [EventosController::class,'index'])->name('eventos.catal
 // Template de invitacion
 Route::get('/invitation/preview/pdf',[ InvitationController::class,'previewInvitation'])->name('invitation.preview.pdf');
 Route::get('/invitation/send/pdf',[ InvitationController::class,'sendInvitation'])->name('invitation.send.pdf');
-
 Route::get('/list/assistants/preview/pdf',[ ListAssistantsController::class,'previewListAssistants'])->name('list.assistants.preview.pdf');
 
 // Excel
@@ -85,4 +86,15 @@ Route::get('/participantes', [ParticipanteController::class,'index'])->name('par
 Route::get('/participantes/registrar', [ParticipanteController::class,'create'])->name('participante.create');
 Route::post('/participantes/registrar', [ParticipanteController::class,'store']);
 Route::get('/participantes/{participante}/edit',[ ParticipanteController::class,'edit'])->name('participante.edit');
-Route::post('/participantes/{participante}/edit',[ ParticipanteController::class,'update']);
+Route::get('/participantes/{participante}/edit',[ ParticipanteController::class,'update'])->name('participante.edit');
+
+//Semana del cerebro 
+Route::get('/semana-del-cerebro', [ParticipantesSC::class,'index'])->name('participanteSC.index');
+Route::get('/semana-del-cerebro/registrar', [ParticipantesSC::class,'create'])->name('participanteSC.create');
+Route::post('/semana-del-cerebro/registrar', [ParticipantesSC::class,'store']);
+Route::get('/semana-del-cerebro/{scparticipante}/edit',[ ParticipantesSC::class,'edit'])->name('participanteSC.edit');
+Route::post('/semana-del-cerebro/{scparticipante}/edit',[ ParticipantesSC::class,'update']);
+// Lista de excel
+Route::get('/semana-del-cerebro/lista-asistenes', [ListAssistantsExcelController::class, 'exportarExcelAsistentesSC'])->name('listaSC.excel');
+// Lista de pdf
+Route::get('/semana-del-cerebro/lista-asistentes/pdf',[ ListaDeAsistentesSCController::class,'exportarPDFAsistentesSC'])->name('SC.pdf');

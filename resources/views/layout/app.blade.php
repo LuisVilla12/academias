@@ -7,7 +7,7 @@
     <title>@yield('title')</title>
     {{-- Barra de estilos --}}
     @stack('styles')
-    <link rel="stylesheet" href="{{ asset('build/assets/app.a3628377.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/assets/app.5966c027.css') }}">
     {{-- <link rel="shortcut icon" href="{{ asset('img/favicon/') }}" type="image/x-icon"> --}}
     {{-- archivos js --}}
     <script src="{{ asset('build/assets/app.e23c9920.js') }}" defer></script>
@@ -47,7 +47,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round"
                         d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
                 </svg>
-            </a>
+            Inicio</a>
             <div class="menu lg:hidden"><i class="fa-solid fa-bars" style="color: #f2f2f2;"></i></div>
             <a href="{{ route('pages.eventos') }}"
                 class="text-center text-white font-bold text-3xl no-underline hidden lg:flex items-center gap-2">
@@ -93,7 +93,7 @@
     </main>
     
 
-    <footer class="bg-primario py-2 mt-10">
+    {{-- <footer class="bg-primario py-2 mt-10">
         <div class="container mx-auto grid md:grid-cols-5 gap-5">
             <div class="col-span-2">
                 <iframe
@@ -119,7 +119,7 @@
             <p class="font-bold text-center text-white">TecRegistra - &copy;Todos los derechos reservados
                 {{ now()->year }}</p>
         </div>
-    </footer>
+    </footer> --}}
     @livewireScripts
     @stack('scripts')
 </body>
